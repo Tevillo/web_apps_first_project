@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/50/Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin_%28cropped%29.jpg">
+    <link rel="stylesheet" href="stupid7.css">
+    <title>Introduction Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+            Paul's Repair Shop Notes
+            </h1>
+        </div>
+        <div class="photos" onmouseover="grey_image(1)" onmouseout="normal_image(1)">
+            <img id="camera_1" src="https://global.canon/ja/c-museum/wp-content/uploads/2015/05/film74_b.jpg" alt="cannonet" width="auto" height="auto">
+            <div class="centered" id="notes_1">
+                Notes
+                <ul>
+                    <li>Foggy RangeFinder</li>
+                    <li>Non Functional Lightmeter</li>
+                    <li>Battery Seems To Still Give Charge</li>
+                </ul>
+            </div>
+        </div>
+        <div class="photos" onmouseover="grey_image(2)" onmouseout="normal_image(2)">
+            <img id="camera_2" src="https://vintagecameradigest.com/wp-content/uploads/2020/12/xe7_gallery9962-2.jpg" alt="minolta xe7" width="auto" height="auto">
+            <div class="centered" id="notes_2">
+                Notes
+                <ul>
+                    <li>No Lens</li>
+                    <li>I messed up the mechanism to release back</li>
+                    <li>Needs battery</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="photos" onmouseover="grey_image(3)" onmouseout="normal_image(3)">
+            <img id="camera_3" src="https://cdn.shopify.com/s/files/1/0521/9496/7750/files/2-KM6279-1.jpg?v=1724135793" alt="minolta hi matic e" width="auto" height="auto">
+            <div class="centered" id="notes_3">
+                Notes
+                <ul>
+                    <li>Needs Battery</li>
+                    <li>Must Lookinto More</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function grey_image(x) {       
+            let c,n;
+            switch (x) {
+                case 1:
+                    c = document.getElementById("camera_1");
+                    n = document.getElementById("notes_1");
+                    break;
+                case 2:
+                    c = document.getElementById("camera_2");
+                    n = document.getElementById("notes_2");
+                    break;
+                case 3:
+                    c = document.getElementById("camera_3");
+                    n = document.getElementById("notes_3");
+                    break;
+            }
+            c.style.filter = "grayscale(100%)";
+            c.style.opacity = ".2";
+            n.style.color = "rgba(0,0,0,1)"
+        }
+        function normal_image(x) {
+            let c,n;
+            switch (x) {
+                case 1:
+                    c = document.getElementById("camera_1");
+                    n = document.getElementById("notes_1");
+                    break;
+                case 2:
+                    c = document.getElementById("camera_2");
+                    n = document.getElementById("notes_2");
+                    break;
+                case 3:
+                    c = document.getElementById("camera_3");
+                    n = document.getElementById("notes_3");
+                    break;
+            }
+            c.style.filter = "grayscale(0%)";
+            c.style.opacity = "1";
+            n.style.color = "rgba(0,0,0,0)"
+        }
+        
+    </script>
+</body>
+<footer>
+    <h2 style="color: #a2aaad;"> email: pborrego@trinity.edu </h2>
+</footer>
+</html>
