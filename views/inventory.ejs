@@ -1,23 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/50/Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin_%28cropped%29.jpg">
-    <link rel="stylesheet" href="stupid7.css">
-    <title>Introduction Page</title>
-</head>
+<%- include('./partials/head.ejs') %>
 <body>
     <div class="container">
         <div class="header">
             <h1>
             Paul's Repair Shop Notes
             </h1>
+            <div class="navigator">
+                <a href="/">Home</a>
+                <a class="active" href="/inventory">Inventory</a>
+                <a href="/canvas_page">RangeFinder</a>
+            </div>
         </div>
         <div class="photos" onmouseover="grey_image(1)" onmouseout="normal_image(1)">
             <img id="camera_1" src="https://global.canon/ja/c-museum/wp-content/uploads/2015/05/film74_b.jpg" alt="cannonet" width="auto" height="auto">
             <div class="centered" id="notes_1">
                 Notes
                 <ul>
-                    <li>Foggy RangeFinder</li>
+                    <li><s>Foggy Rangefinder</s></li>
                     <li>Non Functional Lightmeter</li>
                     <li>Battery Seems To Still Give Charge</li>
                 </ul>
@@ -41,7 +40,8 @@
                 Notes
                 <ul>
                     <li>Needs Battery</li>
-                    <li>Must Lookinto More</li>
+                    <li>Seems there is Fungus inside Glass</li>
+                    <li>Must Look into More</li>
                 </ul>
             </div>
 
