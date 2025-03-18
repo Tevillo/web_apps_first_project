@@ -1,26 +1,38 @@
 <%- include('./partials/head.ejs') %>
 <head>
-    <script src="/javascript/canvas_code.js" defer></script>
+    <script src="javascript/canvas_code.js" defer></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="grid-template-rows: 1fr 1fr 5fr 1fr; ">
         <div class="header"> 
             <h1>Rangefinder Practice Tool</h1>
             <div class="navigator">
                 <a href="/">Home</a>
                 <a href="/inventory">Inventory</a>
-                <a class="active" href="/canvas_page">Rangefinder</a>
+                <a class="active" href="/canvas_page"> Rangefinder </a>
             </div>
+        </div>
+        <div class="change" id="party_button" onclick="changeImage('party')">
+             <h2>Party Scene</h2>
+        </div>
+        <div class="change" id="openheimer_button" onclick="changeImage('openheimer')" style="background-color: #117040">
+             <h2>Grave</h2>
+        </div>
+        <div class="change" id='cute_button' onclick="changeImage('cute')">
+             <h2>Girl</p>
         </div>
         <div class="canvas" id="canvas_container">
             <canvas id="Rangefinder" width="100%" style="border: 1px solid black;">
             </canvas>
-            <img id="img1" src="images/mew.png" style="display: none;">
-            <img id="img1_dist" src="images/mew.png" style="display: none;">
+            <img id="openheimer_front" src="photos/openheimer.jpg" style="display: none;">
+            <img id="openheimer_back"  src="photos/openheimer_yellow.png" style="display: none; opacity: .5;">
+            <img id="cute_front" src="photos/cute.jpg" style="display: none;">
+            <img id="cute_back"  src="photos/cute_yellow.png" style="display: none; opacity: .5;">
+            <img id="party_front" src="photos/party_scene.jpg" style="display: none;">
+            <img id="party_back"  src="photos/party_scene_yellow.png" style="display: none; opacity: .5;">
 
         </div>
         <%- include('./partials/foot.ejs') %>
-    
     </div>
 
     <script>
