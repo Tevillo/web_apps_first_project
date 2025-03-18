@@ -29,10 +29,12 @@ button {
   outline: 0;
   padding: 12px 14px;
   text-align: center;
-  touch-action: manipulation;
   vertical-align: middle;
 }
-
+.container .rf {
+    overflow: hidden;
+    display: none;
+}
 .container .blank {
     background-color: #003831;
 }
@@ -60,6 +62,7 @@ td {
 }
 .container > div {
     background: #a2aaad;
+    padding: 10px;
 }
 .table {
     text-align: left;
@@ -74,15 +77,13 @@ td {
     gap: 5px 5px;
 }
 .container .change {
-    position: relative;
     text-align: center;
-    vertical-align: middle;
-    justify-content: center;
     background-color: #115740; /* Green */
     border: none;
     color: white;
     font-size: 16px;
     gap: 0px;
+    padding: 0x;
 }
 .container .header {
     background: #EFB21E;
@@ -106,15 +107,17 @@ td {
     justify-content: center;
     color: white;
     border-radius: 6px;
+    display: none;
 }
 .container .foot {
     color: #a2aaad;
     background-color: transparent;
 }
-.canvas {
+.container .canvas {
     grid-column: 1 / span 3;
     grid-row: 3 / span 5;
     gap: 5px 5px;
+    padding: 0px;
 }
 .navigator {
     grid-column: 1 / span 3;

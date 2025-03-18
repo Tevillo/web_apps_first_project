@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<%- include('./partials/head.ejs') %>
+<body>
     <div class="container">
       <div class="header">
         <h1>
@@ -14,12 +9,68 @@
           <a class="active" href="/">Home</a>
           <a href="/inventory">Inventory</a>
           <a href="/canvas_page">RangeFinder</a>
+          <a href="/suggestions"> Suggestion Box </a>
         </div>
       </div>
-      <div class="body">
+      <div style="text-align: center;">
+          <img src="/photos/mew.png" alt="Picture of the artist" style="border: 0px;" width="400">
+      </div>
+      <div><h2> Hobbies:
+          <ul>
+              <li>Film Photography</li>
+              <li>Various Sports</li>
+              <li>Video Games</li>
+          </ul>
+      </h2> </div>
+      <div class="table">
+          <h3>Film Stocks Currently in the fridge</h3>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Film Type</th><th>35</th><th>120</th><th>4x5</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <th style="background-color: rgb(189, 176, 100);">Kodak Gold 200</th><td>3</td><td>4</td><td></td>
+                  </tr>
+                  <tr>
+                      <th style="background-color: rgb(189, 176, 100);">Kodak Portra 400</th><td>2</td><td>1</td><td></td>
+                  </tr>
+                  <tr>
+                      <th style="background-color: rgb(212, 218, 218);">Ilford HP5 400</th><td>6</td><td>2</td><td></td>
+                  </tr>
+                  <tr>
+                      <th style="background-color: rgb(212, 218, 218);">Cat Labs 80</th><td></td><td></td><td>1</td>
+                  </tr>
+                  <tr>
+                      <th style="background-color: rgb(189, 87, 87);">Ilford SFX 200</th><td>1</td><td></td><td></td>
+                  </tr>
+              </tbody>
+              
+          </table>
 
       </div>
+      <div class="header">
+          <h1>Most Current Photos</h1>
+          <h3>Taken on 4x5 format</h3>
+      </div>
+      <div class="photos">
+          <a target="_blank" href="photos/JPEG/4x5_001.jpg"> <img src="photos/JPEG/4x5_001.jpg" alt="Picture of: Trinity Night Snow"> </a>
+      </div>
+      <div class="photos">
+          <a target="_blank" href="photos/JPEG/4x5_003.jpg"> <img src="photos/JPEG/4x5_003.jpg" alt="Picture of: Wall Plants"> </a>
+      </div>
+      <div class="photos">
+          <a target="_blank" href="photos/JPEG/4x5_004.jpg"> <img src="photos/JPEG/4x5_004.jpg" alt="Picture of: Building under construction"> </a>
+      </div>
+      <div class="photos">
+          <a target="_blank" href="photos/JPEG/4x5_005.jpg"> <img src="photos/JPEG/4x5_005.jpg" alt="Picture of: Building under construction"> </a>
+      </div>
+      <div class="photos">
+          <a target="_blank" href="photos/JPEG/4x5_006.jpg"> <img src="photos/JPEG/4x5_006.jpg" alt="Picture of: Building under construction"> </a>
+      </div>
+      <div class="blank"></div>
       <%- include('./partials/foot.ejs') %>
     </div>
-  </body>
-</html>
+</body>
