@@ -10,8 +10,8 @@ canvas.width = parent.offsetWidth;
 canvas.height = parent.offsetHeight;
 
 let context = canvas.getContext("2d");
-let image_main = document.getElementById("openheimer_front");
-let image_other = document.getElementById("openheimer_back");
+let image_main = document.getElementById("party_front");
+let image_other = document.getElementById("party_back");
 
 
 var middle_x = canvas.width / 2;
