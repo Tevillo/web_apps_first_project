@@ -1,6 +1,6 @@
 <%- include('./partials/head.ejs') %>
 <body>
-    <div class="container">
+    <div class="container" style="grid-template-rows: 2fr 1fr 1fr 4fr 4fr 1fr;">
       <div class="header">
         <h1>
           Main Page
@@ -12,17 +12,17 @@
           <a href="/suggestions"> Suggestion Box </a>
         </div>
       </div>
-      <div style="text-align: center;">
-          <img src="/photos/mew.png" alt="Picture of the artist" style="border: 0px;" width="400">
+      <div class="pad" style="text-align: center;">
+          <img src="/photos/cute.jpg" alt="Picture of the artist" style="border: 0px;" height="200px">
       </div>
-      <div><h2> Hobbies:
+      <div class="pad"><h2> Hobbies:
           <ul>
               <li>Film Photography</li>
               <li>Various Sports</li>
               <li>Video Games</li>
           </ul>
       </h2> </div>
-      <div class="table">
+      <div class=" pad table">
           <h3>Film Stocks Currently in the fridge</h3>
           <table>
               <thead>

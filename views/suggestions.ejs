@@ -1,6 +1,6 @@
 <%- include('./partials/head.ejs') %>
 <body>
-    <div class="container" style="grid-template-rows: 1fr 1fr 5fr 1fr; ">
+    <div class="container" style="grid-template-rows: 2fr 1fr 5fr 1fr; ">
         <div class="header"> 
             <h1>Suggestion Box</h1>
             <div class="navigator">
@@ -9,6 +9,32 @@
                 <a href="/canvas_page"> Rangefinder </a>
                 <a class="active" href="/suggestions"> Suggestion Box </a>
             </div>
+        </div>
+        <div class="add_suggestion">
+            <h1>Add A Suggestion Here!</h1>
+            <form action="suggestions" method="GET">
+                <label for="stupid_idea">Enter Your Great Idea Here</label>
+                <input type="text" id="stupid_idea" name="stupid_idea">
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        <div class="list">
+            <h1>Existing suggestions</h1>
+            <ul>
+                <li>Maybe take more photos</li>
+                <li>What about more color photos</li>
+                <li>Make an explination for the Rangefinder </li>
+                <li>Make a gallery page</li>
+                <% if (stupid_idea != null) { %>
+                    <li><%= stupid_idea %></li>
+                <% } %> 
+            </ul>
+        </div>
+        <div class="blank">
+            <img src="https://media.istockphoto.com/id/528068947/vector/yes-you-can-quote-poster-design.jpg?s=612x612&w=0&k=20&c=MdwzDIlrB2V6tCzqokakF4arpDF8VpDQBRqMuILoxJk=" alt="not to inspirational poster 1">
+        </div>
+        <div class="blank">
+            <img src="https://c8.alamy.com/comp/2FJNAA9/motivational-quote-poster-inspirational-typography-quote-poster-design-2FJNAA9.jpg" alt="not to inspirational poster 1">
         </div>
         <%- include('./partials/foot.ejs') %>
     </div>
