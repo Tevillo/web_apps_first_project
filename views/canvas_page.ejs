@@ -19,10 +19,10 @@
              <h2>Grave</h2>
         </div>
         <div class="change" id='cute_button' onclick="changeImage('cute')">
-             <h2>Girl</p>
+             <h2>Girl</h2>
         </div>
         <div class="canvas" id="canvas_container">
-            <canvas id="Rangefinder" width="100%" style="border: 1px solid black;">
+            <canvas id="Rangefinder" style="border: 1px solid black;">
             </canvas>
             <img id="openheimer_front" src="photos/openheimer.jpg" style="display: none;">
             <img id="openheimer_back"  src="photos/openheimer_yellow.png" style="display: none; opacity: .5;">
@@ -30,7 +30,17 @@
             <img id="cute_back"  src="photos/cute_yellow.png" style="display: none; opacity: .5;">
             <img id="party_front" src="photos/party_scene.jpg" style="display: none;">
             <img id="party_back"  src="photos/party_scene_yellow.png" style="display: none; opacity: .5;">
-
+        </div>
+        <div class="change" style="grid-column: 2;" onclick="snapPhoto()">
+            <h2>
+                Take Photo
+            </h2>
+        </div>
+        <div class="centered thingy" id="result_screen" style="display: none;">
+            <h2 id="results"></h2>
+            <button onclick="reset()"> Would you like to play again?</button>
+        </div>
+        <div class="blank">
         </div>
         <%- include('./partials/foot.ejs') %>
     </div>

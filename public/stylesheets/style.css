@@ -13,6 +13,29 @@ body {
     background-color: #003831;
     font-family: 'Trebuchet MS', sans-serif;
 }
+
+button {
+  background: #a2aaad;
+  border: 1px solid #a2aaa2;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.container .blank {
+    background-color: #003831;
+}
 img:hover {
     box-shadow: 0 0 4px 2px rgba(0, 140, 186, 0.5);
 }
@@ -76,6 +99,14 @@ td {
   left: 50%;
   transform: translate(-50%, -50%);
 } 
+.container .thingy {
+    background: #EFB21E;
+    min-height: 10vh;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    border-radius: 6px;
+}
 .container .foot {
     color: #a2aaad;
     background-color: transparent;
