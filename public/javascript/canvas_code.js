@@ -16,51 +16,60 @@ let image_other = document.getElementById("openheimer_back");
 
 var middle_x = canvas.width / 2;
 var middle_y = canvas.height / 2;
-const size_x = 1200;
-const size_y = 667;
+const size_y = canvas.height;
+const size_x = size_y * 1.8;
 const origin_x = middle_x - (size_x / 2);
 const origin_y = middle_y - (size_y / 2);
 
 class Lever {
-    lever_width = 300;
-    lever_height = 50;
+    lever_width = size_y / 2;
+    lever_height = size_y / 10;
     angle;
     xPos = origin_x - this.lever_width; //make it seem like lever is inside camera
     yPos = middle_y;
     localY;
+    range = canvas.height * .9;
+    conversion = this.range / 150;
 
     constructor(y) {
         this.localY = y;
-        this.angle = 125 - (y / 4.8); 
+        this.angle = 125 - (y / this.conversion); 
         context.fillStyle = '#C0C0C0';
         this.draw();
     }
 
     draw() {
         context.save();
-        context.translate(origin_x + 40, this.yPos);
-        context.rotate((this.angle + 117.5) * Math.PI / 180);
+        context.translate(origin_x + (size_x / 15), this.yPos); ///15 so lever is not too far inside image
+        context.rotate((this.angle + 135) * Math.PI / 180);
         context.fillRect(0,0, this.lever_width, this.lever_height);
         context.restore();
     }
-    setAngle(angle,y) {
-        this.angle = 125 - (y / 4.8);
+    setAngle(y) {
+        this.angle = 125 - (y / this.conversion);
         this.localY = y;
         this.draw();
     }
     inSquare(x, y) {
-        return (x > this.xPos && x < this.xPos + this.lever_width) && (y > this.localY - 50 && y < this.localY + 50 + this.lever_height) //only works if you click in the levers area
+        return (x > this.xPos && x < this.xPos + this.lever_width && this.inBounds(y))  //only works if you click in the levers area
     }
+    inBounds(y) {
+        return (y < this.range + 20 && y > canvas.height - this.range -20) //plus and minus 20 for leeway
+    }
+
 }
 
 class Focus_Image {
     xPos = origin_x;
     yPos = origin_y;
+    range;
+
     constructor(img, isBack,start) {
         this.img = img;
         this.isBack = isBack
         if (!isBack) {
-            this.xPos += start - 300;
+            this.range = size_x / 4;
+            this.xPos += start - this.range;
         }
         this.draw();
     }
@@ -82,7 +91,7 @@ class Focus_Image {
 }
 
 var drag = false;
-var rand = Math.random() * (600);
+var rand = 0;
 var starting_point = 0;
 var starting_click = 0;
 
@@ -102,11 +111,11 @@ function stopFocus(event) {
 function focus(event) {
     if (drag) {
         const initial_y = Math.floor(event.clientY - rect.top);
-        let x = origin_x - 300 + initial_y - 30; 
-        if (initial_y < 630 && initial_y > 30) { //300 +- so the 2nd image does not move to far
+        let x = origin_x - focus_image.range + initial_y + lever.range - size_y; 
+        if (lever.inBounds(initial_y)) { //300 +- so the 2nd image does not move to far
             // Actions based on click coordinates
             context.clearRect(0, 0, canvas.width, canvas.height);  // clear canvas
-            lever.setAngle(initial_y, initial_y);
+            lever.setAngle(initial_y);
             main_image.draw();
             focus_image.move(x);
         }
@@ -123,18 +132,16 @@ function changeImage(name) {
 
 function snapPhoto() {
     let diff = Math.abs(focus_image.xPos - main_image.xPos);
-    console.log(diff);
-    let result = Math.floor((1 - (diff / 300)) * 100);
-    console.log(result);
+    let result = Math.floor((1 - (diff / focus_image.range)) * 100);
     result_screen.setAttribute('style','display: block');
     result_answer.textContent = "You got a score of " + result + "!";
 }
 
 function reset() {
     result_screen.setAttribute('style','display: none');
-    rand = Math.random() * (600);
+    rand = Math.random() * (size_x / 2);
     context.clearRect(0, 0, canvas.width, canvas.height);  // clear canvas
-    lever.setAngle(0,rand + 20);
+    lever.setAngle(rand);
     main_image = new Focus_Image(image_main, true,rand); //main Image
     focus_image = new Focus_Image(image_other, false,rand); //focus Image
 }
@@ -154,6 +161,7 @@ function activate(a) {
 }
 
 function loadHandler(event) {
+    rand = Math.random() * (size_x / 2);
     lever = new Lever(rand);
     main_image = new Focus_Image(image_main, true,rand); //main Image
     focus_image = new Focus_Image(image_other, false,rand); //focus Image

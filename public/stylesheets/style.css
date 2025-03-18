@@ -108,14 +108,12 @@ td {
 } 
 .container .thingy {
     background: #EFB21E;
-    min-height: 10vh;
     text-align: center;
     justify-content: center;
     color: white;
     border-radius: 6px;
     display: none;
-    padding: 0;
-    height: 50px;
+    padding: 10px;
 }
 .container .foot {
     color: #a2aaad;
