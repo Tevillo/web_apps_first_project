@@ -1,27 +1,25 @@
 <%- include('./partials/head.ejs') %>
 <head>
-    <script src="canvas_code.js" defer></script>
+    <script src="/javascript/canvas_code.js" defer></script>
 </head>
 <body>
     <div class="container">
         <div class="header"> 
-            <h1>RangeFinder Practice Tool</h1>
+            <h1>Rangefinder Practice Tool</h1>
             <div class="navigator">
                 <a href="/">Home</a>
                 <a href="/inventory">Inventory</a>
-                <a class="active" href="/canvas_page">RangeFinder</a>
+                <a class="active" href="/canvas_page">Rangefinder</a>
             </div>
         </div>
         <div class="canvas" id="canvas_container">
-            <canvas id="RangeFinder" width="100%" style="border: 1px solid black;">
+            <canvas id="Rangefinder" width="100%" style="border: 1px solid black;">
             </canvas>
             <img id="img1" src="images/mew.png" style="display: none;">
             <img id="img1_dist" src="images/mew.png" style="display: none;">
 
         </div>
-        <div class="footer">
-            <h2> email: pborrego@trinity.edu </h2>
-        </div>
+        <%- include('./partials/foot.ejs') %>
     
     </div>
 

@@ -1,14 +1,15 @@
 <%- include('./partials/head.ejs') %>
+<head>
+    <script src="javascript/inventory.js" defer></script>
+</head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>
-            Paul's Repair Shop Notes
-            </h1>
+            <h1> Paul's Repair Shop Notes </h1>
             <div class="navigator">
                 <a href="/">Home</a>
                 <a class="active" href="/inventory">Inventory</a>
-                <a href="/canvas_page">RangeFinder</a>
+                <a href="/canvas_page">Rangefinder</a>
             </div>
         </div>
         <div class="photos" onmouseover="grey_image(1)" onmouseout="normal_image(1)">
@@ -44,55 +45,11 @@
                     <li>Must Look into More</li>
                 </ul>
             </div>
-
         </div>
+        <%- include('./partials/foot.ejs') %>
     </div>
 
-    <script>
-        function grey_image(x) {       
-            let c,n;
-            switch (x) {
-                case 1:
-                    c = document.getElementById("camera_1");
-                    n = document.getElementById("notes_1");
-                    break;
-                case 2:
-                    c = document.getElementById("camera_2");
-                    n = document.getElementById("notes_2");
-                    break;
-                case 3:
-                    c = document.getElementById("camera_3");
-                    n = document.getElementById("notes_3");
-                    break;
-            }
-            c.style.filter = "grayscale(100%)";
-            c.style.opacity = ".2";
-            n.style.color = "rgba(0,0,0,1)"
-        }
-        function normal_image(x) {
-            let c,n;
-            switch (x) {
-                case 1:
-                    c = document.getElementById("camera_1");
-                    n = document.getElementById("notes_1");
-                    break;
-                case 2:
-                    c = document.getElementById("camera_2");
-                    n = document.getElementById("notes_2");
-                    break;
-                case 3:
-                    c = document.getElementById("camera_3");
-                    n = document.getElementById("notes_3");
-                    break;
-            }
-            c.style.filter = "grayscale(0%)";
-            c.style.opacity = "1";
-            n.style.color = "rgba(0,0,0,0)"
-        }
-        
-    </script>
 </body>
 <footer>
-    <h2 style="color: #a2aaad;"> email: pborrego@trinity.edu </h2>
 </footer>
 </html>
